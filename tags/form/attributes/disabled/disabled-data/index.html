@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+  <h2>input, select, textarea disabled</h2>
+  <form action="server.php" method="post">
+    <p>
+      <label for="username">User Name:</label>
+      <input type="text" name="username" id="username" disabled="" />
+    </p>
+    <p>
+      <label for="color">Color:</label>
+      <select name="color" id="color" disabled="" >
+        <option value="0">red</option>
+        <option value="1">green</option>
+        <option value="2">blue</option>
+      </select>
+    </p>
+    <p>
+      <label for="description">Description:</label>
+      <textarea name="description" id="description" cols="30" rows="10" disabled=""></textarea>
+    </p>
+    <input type="submit" />
+  </form>
+
+  <h2>fieldset disabled</h2>
+  <form action="server.php" method="post">
+    <fieldset disabled="">
+      <legend>test</legend>
+      <p>
+        <label for="username">User Name:</label>
+        <input type="text" name="username" id="username" />
+      </p>
+      <p>
+        <label for="color">Color:</label>
+        <select name="color" id="color">
+          <option value="0">red</option>
+          <option value="1">green</option>
+          <option value="2">blue</option>
+        </select>
+      </p>
+      <p>
+        <label for="description">Description:</label>
+        <textarea name="description" id="description" cols="30" rows="10"></textarea>
+      </p>
+    </fieldset>
+    <input type="submit" />
+  </form>
+
+  <h2>form disabled</h2>
+  <form action="server.php" method="post" disabled="">
+    <p>
+      <label for="username">User Name:</label>
+      <input type="text" name="username" id="username" />
+    </p>
+    <p>
+      <label for="color">Color:</label>
+      <select name="color" id="color">
+        <option value="0">red</option>
+        <option value="1">green</option>
+        <option value="2">blue</option>
+      </select>
+    </p>
+    <p>
+      <label for="description">Description:</label>
+      <textarea name="description" id="description" cols="30" rows="10"></textarea>
+    </p>
+    <input type="submit" />
+  </form>
+</body>
+</html>

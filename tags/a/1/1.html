@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="yanxyz.net" />
+		<title>LoVeHAte</title>
+		<style>
+			*{margin:0;padding:0}
+			body { margin:10px auto;width:800px;}
+			h2 {font-size:16px;margin:15px 0;}
+			a {margin-right:15px;}
+
+			.a1:link {color:#336699;}
+			.a1:visited {color:#FB9500;}
+			.a1:hover {color:#009933}
+			.a1:active {color:#DD4B39}
+
+			.a2:visited {color:#FB9500;}
+			.a2:link {color:#336699;}
+			.a2:hover {color:#009933}
+			.a2:active {color:#DD4B39}
+
+			.a3:visited {color:#FB9500;}
+			.a3:link {color:#336699;}
+			.a3:active {color:#DD4B39}
+			.a3:hover {color:#009933}
+
+			.a4:hover {color:#009933}
+			.a4:active {color:#DD4B39}
+			.a4:visited {color:#FB9500;}
+			.a4:link {color:#336699;}
+
+		</style>
+	</head>
+	<body>
+		<a class="a0" href="#">默认样式</a>
+		<h2>:link、:visited、:hover 、:active 用1、2、3、4来标记。</h2>
+		<a class="a1" href="#">1234</a>常说的LoVeHAte顺序，那么是不是1覆盖2？
+		<ul>
+			<li><a class="a2" href="#">2134</a>点击后，是2，说明1没有覆盖2</li>
+			<li><a class="a3" href="#">2143</a>点击前或点击后都没有4，说明3覆盖4。<br />
+			IE6,7聚焦在上面时有4。
+			</li>
+			<li>
+			<a class="a4" href="http://google.com">3421</a>点击前没有3，说明1覆盖3,4;点击后没有3，说明2覆盖3,4 <br />
+			这个结论用到了上面两个结论<br />
+			IE6下点击前有3。
+			</li>
+		</ul>
+	</body>
+</html>

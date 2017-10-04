@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+  <form action="server.php" method="post">
+    <input type="text" name="username" id="username" value="Ivan Yan" />
+    <input type="submit" />
+  </form>
+  <p id="r"></p>
+<script>
+var el = document.getElementById('username')
+el.onchange = log
+
+window.onload = log
+
+function log () {
+  document.getElementById('r').innerText = 'encodeURIComponent(): ' + encodeURIComponent(el.value)
+}
+</script>
+</body>
+</html>

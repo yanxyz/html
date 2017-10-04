@@ -1,0 +1,133 @@
+-
+  # 完整的列表项目
+  # 项目可以省略，最好顺序一致
+  type: button
+  title: 按钮
+  class:
+  example:
+  description:
+  ie:
+  edge:
+  chrome:
+  firefox:
+  safari:
+-
+  type: checkbox
+  title: 复选框
+  example: |
+    <input type="checkbox" name="favorite" id="" value="0" /> Book
+    <input type="checkbox" name="favorite" id="" value="1" /> Music
+-
+  type: color
+  title: 色盘
+  class: html5
+  ie: -1
+  safari: -1
+-
+  type: date
+  title: 日期
+  class: html5
+  ie: -1
+  chrome:
+  firefox: -1
+  safari: no UI
+-
+  type: datetime
+  title: 日期 - 时间
+  class: html5
+  ie: -1
+  chrome: -1
+  firefox: -1
+  safari: no UI
+-
+  type: datetime-local
+  title: 日期 - 本地
+  class: html5
+  ie: -1
+  firefox: -1
+  safari: no UI
+-
+  type: email
+  title: 邮箱输入框
+  class: html5
+  ie: 10
+-
+  type: file
+  title: 文件选择框
+-
+  type: hidden
+  title: 隐藏字段
+-
+  type: image
+  title: 图片按钮
+-
+  type: month
+  title: 日历 - 月
+  class: html5
+  example:
+  description:
+  ie: -1
+  firefox: -1
+  safari: no UI
+-
+  type: number
+  title: 数字输入框
+  class: html5
+  example: |
+    <input type="number" min="0" max="100" step="10" />
+  description:
+  ie: 10 no UI
+-
+  type: password
+  title: 密码输入框
+  example: |
+    <input type="password" name="password" id="" value="123456" />
+-
+  type: radio
+  title: 单选框
+  example: |
+    <input type="radio" name="gender" id="male" value="male" /> Male
+    <input type="radio" name="gender" id="female" value="female" /> Female
+-
+  type: range
+  title: 值域
+  class: html5
+  ie: 10
+-
+  type: reset
+  title: 重置
+-
+  type: search
+  title: 搜索框
+  class: html5
+  ie: 10
+-
+  type: submit
+  title: 提交按钮
+-
+  type: tel
+  title: 电话输入框
+  class: html5
+  ie: 10
+-
+  type: text
+  title: 文本输入框
+-
+  type: time
+  title: 时间输入框
+  class: html5
+  ie: -1
+  firefox: -1
+  safari: no UI
+-
+  type: url
+  title: 网址输入框
+  class: html5
+  ie: 10
+-
+  type: week
+  title: 日历 - 周
+  class: html5
+  ie: -1
+  firefox: -1
+  safari: no UI

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+  <h1>checkbox</h1>
+
+  <h3>no value</h3>
+  <form action="server.php" method="post">
+    <label><input type="checkbox" name="agreement">agree?</label>
+    <input type="submit">
+  </form>
+
+  <h3>value=""</h3>
+  <form action="server.php" method="post">
+    <label><input type="checkbox" name="agreement" value="">agree?</label>
+    <input type="submit">
+  </form>
+
+  <h3>value="0"</h3>
+  <form action="server.php" method="post">
+    <label><input type="checkbox" name="agreement" value="0">agree?</label>
+    <input type="submit">
+  </form>
+
+<script>
+var forms = document.forms
+for (var i = 0; i < forms.length; i++) {
+  var form = forms[i]
+  var input = form.firstElementChild.firstElementChild
+  var p = document.createElement('p')
+  form.appendChild(p)
+  input.onchange = log
+  log(input)
+}
+
+function log (target) {
+  target = target.nodeType === 1 ? target : target.target
+  var arr = [
+    'checkbox.value: ' + target.value,
+    'checkbox.checked: ' + target.checked,
+    'checkbox.defaultChecked: ' + target.defaultChecked
+  ]
+  target.form.lastElementChild.innerHTML = arr.join('<br>')
+}
+</script>
+
+</body>
+</html>

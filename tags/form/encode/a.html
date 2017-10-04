@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+  <form action="server.php" method="POST">
+    <p>
+      <input type="text" name="str" id="str" value="& +=">
+    </p>
+    <p>
+      <input type="submit" >
+    </p>
+    <pre id="pre"></pre>
+  </form>
+
+<script>
+document.getElementById('str').onchange = log
+log()
+
+function log() {
+  var input = document.getElementById('str')
+  var pre = document.getElementById('pre')
+  var arr = [
+    'input.value: "' + input.value + '"',
+    'encodeURI: "' + encodeURI(input.value) + '"',
+    'encodeURIComponent: "' + encodeURIComponent(input.value) + '"'
+  ]
+  pre.innerText = arr.join('\n')
+}
+</script>
+</body>
+</html>

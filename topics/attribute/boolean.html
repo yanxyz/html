@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+  <h2>checked: false</h2>
+  <input type="checkbox" />checkbox0
+
+  <h2>checked: true</h2>
+  <input type="checkbox" checked />checkbox1
+  <input type="checkbox" checked="" />checkbox2
+  <input type="checkbox" checked="checked" />checkbox3
+  <input type="checkbox" checked="true" />checkbox4
+  <input type="checkbox" checked="false" />checkbox4
+
+  <h3>results:</h3>
+  <textarea id="log" cols="150" rows="15" spellcheck="off"></textarea>
+<script>
+window.onload = function () {
+  var inputs = document.getElementsByTagName('input')
+  var arr = []
+  for (var i = 0; i < inputs.length; i++) {
+    arr.push('checkbox' + i + ".getAttribute('checked'): " + inputs[i].getAttribute('checked'))
+    arr.push('checkbox' + i + ".checked: " + inputs[i].checked)
+  }
+  document.getElementById('log').value = arr.join('\n')
+}
+</script>
+</body>
+</html>

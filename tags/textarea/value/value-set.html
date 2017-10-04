@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+
+  <form action="server.php" method="POST">
+    <div>
+      <h3>value</h3>
+      <textarea name="t1" id="t1" cols="50" rows="5"></textarea>
+    </div>
+    <div>
+      <h3>textContent</h3>
+      <textarea name="t2" id="t2" cols="50" rows="5"></textarea>
+    </div>
+    <div>
+      <h3>innerHTML</h3>
+      <textarea name="t3" id="t3" cols="50" rows="5"></textarea>
+    </div>
+  </form>
+
+<script>
+init()
+
+function init() {
+  var val = '<textarea></textarea>\n<textarea>2</textarea>'
+
+  var t1 = document.getElementById('t1')
+  t1.value = val
+  log(t1)
+
+  var t2 = document.getElementById('t2')
+  if ('textContent' in t2) {
+    t2.textContent = val
+  } else {
+    t2.innerText = val
+  }
+  log(t2)
+
+  var t3 = document.getElementById('t3')
+  t3.innerHTML = val
+  log(t3)
+}
+
+function log(textarea) {
+  var arr = [
+    'textarea.value: "' + textarea.value + '"',
+    'textarea.defaultValue: "' + textarea.defaultValue + '"',
+    'textarea.textContent: "' + textarea.textContent + '"',
+    'textarea.innerText: "' + textarea.innerText + '"',
+  ]
+
+  var pre = document.createElement('pre')
+  var parent = textarea.parentNode
+  if ('lastElementChild' in parent) {
+    pre.textContent = arr.join('\n')
+  } else {
+    pre.innerText = arr.join('\n')
+  }
+  parent.appendChild(pre)
+}
+
+</script>
+</body>
+</html>

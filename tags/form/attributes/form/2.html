@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+<form action="" name="form1" id="f1"></form>
+<form action="" name="form2" id="f2"></form>
+<input type="text" form="f1 f2" />
+<input type="submit" form="f1" />
+
+<script>
+document.forms.form1.onsubmit = function () {
+  alert('submit form1')
+  return false
+}
+
+document.forms.form2.onsubmit = function () {
+  alert('submit form2')
+  return false
+}
+</script>
+</body>
+</html>

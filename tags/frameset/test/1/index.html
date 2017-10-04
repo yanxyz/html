@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+	"http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title></title>
+	<style type="text/css">
+		* {padding:0; margin:0;}
+		#header {position:relative; z-index:1000;}
+		#leftFrame {position:relative; border-right:1px solid #ddd;}
+		#footer {position:relative; border-top:1px solid #ddd;}
+	</style>
+</head>
+<frameset rows="90, *, 50" frameborder="0">
+	<frame src="frm/header.html" name="header" id="header" frameborder="0" scrolling="no" noresize/>
+	<frameset cols="78, *" frameborder="0">
+		<frame src="frm/left.html" name="leftFrame" id="leftFrame" frameborder="0" noresize/>
+		<frame src="frm/right.html" name="rightFrame" id="rightFrame" frameborder="0" />
+	</frameset>
+	<frame src="frm/footer.html" name="footer" id="footer" frameborder="0" scrolling="no" noresize/>
+</frameset>
+<noframes>
+	<body>您的浏览器无法处理框架！</body>
+	<!--<body>Apparently frames cannot be displayed<body> -->
+	<!-- Write web pages to allow navigation without frames --> 
+</noframes>
+</html>

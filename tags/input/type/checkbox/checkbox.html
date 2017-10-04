@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+</head>
+<body>
+	<h3>test1</h3>
+	<form action="checkbox.php" method="post" id="test1">
+		<p>下面复选框 name 各不相同</p>
+		<input type="checkbox" name="r1" id="t11" />checkbox1
+		<input type="checkbox" name="r2" id="t12" value="" />checkbox2
+		<input type="checkbox" name="r3" id="t13" value=" " />checkbox3
+		<input type="checkbox" name="r4" id="t14" value="yes" />checkbox4
+		<input type="submit" name="test1" value="提交" />
+	</form>
+	<p id="result1"></p>
+	<script>
+		function echoResult() {
+			var result = '';
+			for (var i=1; i<5; i++) {
+				var el = document.getElementById('t1' + i);
+				result += 'checkbox' + i + ': ' + el.checked + ' ' + el.value + '<br />';
+			}
+			document.getElementById('result1').innerHTML = result;
+		}
+
+		echoResult();
+
+		document.getElementById('test1').onchange = function(e) {
+			var target = e.target || e.srcElement;
+			if (target.type === 'checkbox') echoResult();
+		}
+	</script>
+	<ul>
+		<li>checkbox 不受其它 checkbox 的影响，选中后可以取消选择。</li>
+		<li>无 value 时,  value 为 "on"； 有 value 时为指定值。</li>
+	</ul>
+
+	<hr />
+
+	<h3>test2</h3>
+	<form action="checkbox.php" method="post" id="test2" >
+		<p>下面复选框 name 值一样</p>
+		<input type="checkbox" name="r[]" id="t21" value="v1" />checkbox1
+		<input type="checkbox" name="r[]" id="t22" value="v2" />checkbox2
+		<input type="checkbox" name="r[]" id="t23" value="v3" />checkbox3
+		<input type="checkbox" name="r[]" id="t24" value="v4" />checkbox4
+		<input type="submit" name="test2" value="提交" />
+	</form>
+	<p id="result2"></p>
+	<script>
+		var form = document.getElementById('test2');
+		var els = form.elements['r[]'];
+
+		function echoResult() {
+			var result = "选中项："
+			for (var i=0; i < els.length; i++) {
+				if (els[i].checked) {
+					result += 'checkbox' + (i+1) + ' ';
+				}
+			}
+			document.getElementById('result2').innerHTML = result;
+		}
+
+		echoResult()
+
+		form.onchange = function(e) {
+			var target = e.target || e.srcElement;
+			if (target.type === 'checkbox') echoResult();
+		}
+
+	</script>
+	<ul>
+		<li>复选框 name 一样时， js 需要遍历获取选中项的值。name 需要是数组形式，这样 php 脚本才能知道选中了哪些项。<a href="http://stackoverflow.com/questions/4997252/get-post-from-multiple-checkboxes">参考</a></li>
+	</ul>
+</body>
+</html>

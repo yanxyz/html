@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+
+<script>
+// script-inserted scripts
+var script = document.createElement('script')
+script.src = 'server.php?t=1&n=1'
+document.body.appendChild(script)
+
+// parser-inserted scripts
+document.write('<script src="server.php?t=3&n=2"></' + 'script>')
+
+console.log(3)
+</script>
+
+</body>
+</html>

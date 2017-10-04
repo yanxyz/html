@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>1</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function goUrl(){
+				window.location.href='http://www.baidu.com';
+				// alert('怎么执行');
+			}
+		</script>
+
+		<p><a href="" onclick="goUrl();">link0</a> href=""</p>
+		<p><a href="javascript:;" onclick="goUrl();">link1</a> href="javascript:;" </p>
+		<p><a href="javascript:void(0);" onclick="goUrl();">link2</a> href="javascript:void(0);"</p>
+		<p><a href="#" onclick="goUrl();">link4</a> href="#"</p>
+		<p><a href="###" onclick="goUrl();">link5</a> href="###"</p>
+
+		<p>href="" IE 下等效于 href="./index.html"，其它浏览器下点击会刷新页面。</p>
+		<p>link1 与 link2 在 IE6 下跳转失败， IE6认为应该进行页面跳转，会中断所有连接（比如 ajax, 图片加载等）。其它浏览器下会跳转。</p>
+
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+</head>
+<body>
+	<form id="form" action="form.php" method="post">
+		<label for="">性别：</label>
+		<input type="radio" name="gender" id="man" value="man" onchange="test(this);" />男
+		<input type="radio" name="gender" id="woman" value="woman" onchange="test(this);" />女
+		<br />
+		<label for="">颜色：</label>
+		<input type="checkbox" name="color[]" id="color_red" value="red" />红
+		<input type="checkbox" name="color[]" id="color_green" value="green" />绿
+		<input type="checkbox" name="color[]" id="color_blue" value="blue" />蓝
+	</form>
+
+	<script src="http://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+		var form = document.getElementsByTagName('form')[0];
+		var elems = form.elements;
+		console.log(elems.gender)
+		console.log($(elems.gender))
+		console.log($('').add(elems.gender))
+		console.log(elems['color[]'])
+
+		var o = {
+			'color[]': 'blue'
+		}
+		console.log(JSON.stringify(o))
+
+	</script>
+
+</body>
+</html>

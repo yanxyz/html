@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+
+<button type="button" id="btn1">test1</button>
+<button type="button" id="btn2">test2</button>
+
+<script>
+
+(function () {
+
+})()
+
+function t(src) {
+  var s = document.createElement('script')
+
+  s.onload = function () {
+    console.log('load')
+  }
+
+  s.onreadystatechange = function () {
+    console.log(this.readyState)
+  }
+
+  s.onerror = function () {
+    console.log('error')
+  }
+
+  s.src = src
+
+  document.body.appendChild(s)
+}
+
+document.getElementById('btn1').onclick = function () {
+  t('server.php?t')
+}
+
+document.getElementById('btn2').onclick = function () {
+  t('server.php?t')
+}
+</script>
+</body>
+</html>

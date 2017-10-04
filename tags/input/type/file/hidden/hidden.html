@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+<input type="file" id="files" style="display: none" />
+<a href="#" id="link">Browser...</a>
+<script>
+document.getElementById('link').onclick = function () {
+  document.getElementById('files').click()
+  return false
+}
+</script>
+</body>
+</html>

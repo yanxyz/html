@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+  <h3>no option</h3>
+  <form action="sever.php" method="post">
+    <select name="color" id="" multiple></select>
+    <input type="submit">
+  </form>
+
+  <h3>no option, select value</h3>
+  <form action="sever.php" method="post">
+    <select name="color" id="" value="black" multiple></select>
+    <input type="submit">
+  </form>
+
+  <h3>option no value, option text 首尾有空白</h3>
+  <form action="sever.php" method="post">
+    <select name="color" id="" multiple>
+      <option>   red     </option>
+      <option selected>   green   </option>
+      <option>   blue    </option>
+    </select>
+    <input type="submit">
+  </form>
+
+  <h3>option value, option value 首尾有空白</h3>
+  <form action="sever.php" method="post">
+    <select name="color" id="" multiple>
+      <option value="  r   ">    red     </option>
+      <option value="  g" selected>    green   </option>
+      <option value="b">    blue    </option>
+    </select>
+    <input type="submit">
+  </form>
+
+<script>
+var forms = document.forms
+for (var i = 0; i < forms.length; i++) {
+  var form = forms[i]
+  var select = form.firstElementChild
+  var pre = document.createElement('pre')
+  form.appendChild(pre)
+  select.onchange = log
+  log(select)
+}
+
+function log (target) {
+  target = target.nodeType === 1 ? target : target.target
+  var selectedOption = target.options[select.selectedIndex]
+
+  var arr = [
+    'select.value: "' + select.value + '"',
+    'select.selectedIndex: ' + select.selectedIndex
+  ]
+
+  if (selectedOption) {
+    arr.push(
+      'selectedOption.value: "' + selectedOption.value + '"',
+      'selectedOption.text: "' + selectedOption.text + '"',
+      'selectedOption.textContent: "' + selectedOption.textContent + '"',
+      'selectedOption.innerText:   "' + selectedOption.textContent + '"'
+    )
+  }
+  target.form.lastElementChild.innerHTML = arr.join('\n')
+}
+</script>
+</body>
+</html>

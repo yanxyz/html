@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+  <h3>value="test"</h3>
+  <form action="server.php" method="POST">
+    <textarea name="intro" id="" value="test" rows="5"></textarea>
+  </form>
+
+  <h3>no value</h3>
+  <form action="server.php" method="POST">
+    <textarea name="intro" id="" rows="5">one
+      <b>two</b>
+    </textarea>
+  </form>
+
+  <h3>nested textarea</h3>
+  <form action="server.php" method="POST">
+    <textarea name="intro" id="" rows="5">
+      <textarea></textarea>
+      <textarea>test</textarea>
+    </textarea>
+  </form>
+
+<script>
+init()
+
+function init() {
+  var forms = document.forms
+  for (var i = 0; i < forms.length; i++) {
+    var form = forms[i]
+    var textarea = form.elements.intro
+    var pre = document.createElement('pre')
+    form.appendChild(pre)
+    textarea.onchange = log
+    log(textarea)
+  }
+}
+
+function log(textarea) {
+  textarea = textarea || this
+  var arr = [
+    'textarea.value: "' + textarea.value + '"',
+    'textarea.defaultValue: "' + textarea.defaultValue + '"',
+    'textarea.textContent: "' + textarea.textContent + '"',
+    'textarea.innerText: "' + textarea.innerText + '"',
+  ]
+
+  var form = textarea.form
+  if ('lastElementChild' in form) {
+    form.lastElementChild.textContent = arr.join('\n')
+  } else {
+    form.lastChild.innerText = arr.join('\n')
+  }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+<p><a href="https://developer.mozilla.org/en-US/docs/Using_files_from_web_applications">source</a></p>
+
+<form action="">
+  <input type="file" id="fileElem" multiple accept="image/*" style="display:none" onchange="handleFiles(this.files)">
+  <a href="#" id="fileSelect">Select some files</a>
+  <div id="fileList">
+    <p>No files selected!</p>
+  </div>
+</form>
+
+<script src="script.js"></script>
+</body>
+</html>

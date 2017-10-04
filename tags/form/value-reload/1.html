@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+<p>修改一下输入框的值，然后刷新页面，是修改之前的值，还是修改之后的值？</p>
+<form action="" name="form1">
+  <input type="text" value="Shenzhen" id="city" />
+</form>
+<textarea name="" id="log" cols="30" rows="10"></textarea>
+<script>
+window.onload = log
+
+document.getElementById('city').onchange = log
+
+function log () {
+  var input = document.getElementById('city')
+  var arr = [
+    'input.value: ' + input.value,
+    'input.defaultValue: ' + input.defaultValue
+  ]
+  document.getElementById('log').value = arr.join('\n')
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+
+<body>
+  <div>
+    <h2>no value</h2>
+    <p>Default value is "on".</p>
+    <p>If there is only one radio, it could not uncheck after checked.</p>
+    <form action="/server.php" method="post">
+      <input type="radio" name="color" id="" />radio
+      <input type="submit" />
+    </form>
+  </div>
+
+  <div>
+    <h2>value=""</h2>
+    <p>value of the checked radio is no doubt "".</p>
+    <form action="/server.php" method="post">
+      <input type="radio" name="color" id="" value="" />radio
+      <input type="submit" />
+    </form>
+  </div>
+
+  <div>
+    <h2>radio group</h2>
+    <p>only one in a radio group could be checked.</p>
+    <form action="/server.php" method="post">
+      <input type="radio" name="color" id="" value="r" />red
+      <input type="radio" name="color" id="" value="g" />green
+      <input type="radio" name="color" id="" value="b" />blue
+      <input type="submit" />
+    </form>
+  </div>
+</body>
+
+</html>

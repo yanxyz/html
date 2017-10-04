@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+  <h2>input</h2>
+  <p>no spellcheck <input type="text" value="helle">
+  <label for="">spellcheck<input type="checkbox"></label></p>
+  <p>spellcheck="true" <input type="text" value="helle" spellcheck="true"></p>
+  <p>spellcheck="default" <input type="text" value="helle" spellcheck="default"></p>
+  <p>spellcheck="false" <input type="text" value="helle" spellcheck="false"></p>
+<script>
+var elems = document.querySelectorAll('input[type="text"]')
+Array.prototype.forEach.call(elems, function (x) {
+  console.log('spellcheck attribute ' + x.getAttribute('spellcheck'))
+  console.log(x.spellcheck)
+})
+
+var checkbox = document.querySelector('input[type="checkbox"]')
+checkbox.target = checkbox.parentNode.previousElementSibling
+checkbox.checked = checkbox.target.spellcheck
+checkbox.onchange = function () {
+  checkbox.target.spellcheck = checkbox.checked
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+
+  <select name="" id="s" multiple style="width: 5em">
+    <option value="0">a</option>
+    <option value="1">b</option>
+    <option value="2">c</option>
+    <option value="3">d</option>
+    <option value="4">e</option>
+    <option value="5">f</option>
+    <option value="6">g</option>
+    <option value="7">h</option>
+    <option value="8">i</option>
+  </select>
+
+<script>
+
+init()
+
+function init() {
+  var select = document.getElementById('s')
+  var pre = document.createElement('pre')
+  pre.id = 'pre'
+  select.parentNode.appendChild(pre, select)
+  select.onchange = log
+  log(select)
+}
+
+function log (select) {
+  select = select || this
+  var selectedOption = target.options[select.selectedIndex]
+
+  var arr = [
+    'select.value: "' + select.value + '"',
+    'select.selectedIndex: ' + select.selectedIndex
+  ]
+
+  if (selectedOption) {
+    arr.push(
+      'selectedOption.value: "' + selectedOption.value + '"',
+      'selectedOption.text: "' + selectedOption.text + '"',
+      'selectedOption.textContent: "' + selectedOption.textContent + '"',
+      'selectedOption.innerText:   "' + selectedOption.textContent + '"'
+    )
+  }
+  target.form.lastElementChild.innerHTML = arr.join('\n')
+}
+</script>
+</body>
+</html>

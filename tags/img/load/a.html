@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+  <p>下面会有 img 请求吗？</p>
+
+  <p>div{display:none;} img, 110</p>
+  <div style="display:none;">
+    <img src="http://via.placeholder.com/110x110" alt="">
+  </div>
+
+  <p>div[hidden] img, 120</p>
+  <div hidden>
+    <img src="http://via.placeholder.com/120x120" alt="">
+  </div>
+
+  <p>img{display:none;}, 130</p>
+  <div>
+    <img src="http://via.placeholder.com/130x130" alt="" style="display:none;">
+  </div>
+
+  <p>img[hidden], 140</p>
+  <div>
+    <img src="http://via.placeholder.com/140x140" alt="" hidden>
+  </div>
+
+  <p>div{display:none;background-image}, 210</p>
+  <div class="box box1"></div>
+
+  <p>div[hidden]{background-image}, 220</p>
+  <div class="box box2" hidden></div>
+
+  <p>div-null {background-image}, 230</p>
+
+  <p>div{display:none;} div{background-image}, 240</p>
+  <div class="box" style="display:none;">
+    <div class="box4"></div>
+  </div>
+
+  <p>div[hidden] div{background-image}, 250</p>
+  <div class="box" hidden>
+    <div class="box5"></div>
+  </div>
+
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+    }
+
+    .box1 {
+      display: none;
+      background: url(http://via.placeholder.com/210x210)
+    }
+
+    .box2 {
+      background: url(http://via.placeholder.com/220x220)
+    }
+
+    .box3 {
+      background: url(http://via.placeholder.com/230x230)
+    }
+
+    .box4 {
+      background: url(http://via.placeholder.com/240x420)
+    }
+
+    .box5 {
+      background: url(http://via.placeholder.com/250x250)
+    }
+  </style>
+
+</body>
+</html>

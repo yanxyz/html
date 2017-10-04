@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<style>
+		table {border-collapse: collapse;}
+		td { padding: 5px; border: 1px solid #cdcdcd;}
+
+		.test2 :indeterminate { background: red}
+
+		.p3 {
+			-moz-orient: vertical;
+			-webkit-orient: vertical;
+			-ms-orient: vertical;
+			orient: vertical;
+		}
+
+
+	</style>
+</head>
+<body>
+	<h1>progress</h1>
+	<p>author: yan</p>
+
+	<h3>默认样式</h3>
+	<table>
+		<tr>
+			<td><progress></progress></td>
+			<td>没有 value</td>
+		</tr>
+		<tr>
+			<td><progress value></progress></td>
+			<td>value</td>
+		</tr>
+		<tr>
+			<td><progress value=""></progress></td>
+			<td>value=""</td>
+		</tr>
+		<tr>
+			<td><progress value="0.3"></progress></td>
+			<td>value="0.3"</td>
+		</tr>
+	</table>
+
+	<div class="test2">
+		<h3>:indeterminate</h3>
+		<progress></progress>
+		<progress value=""></progress>
+	</div>
+
+	<h3>orient: vertical</h3>
+	<progress value class="p3"></progress>
+
+
+</body>
+</html>

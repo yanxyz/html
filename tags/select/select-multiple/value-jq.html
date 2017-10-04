@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+
+  <form action="server.php" method="POST">
+    <p>
+      <select name="letters[]" id="letters" multiple size="10" style="width: 15em">
+          <option value="0">a</option>
+          <option value="1">b</option>
+          <option value="2">c</option>
+          <option value="3">d</option>
+          <option value="4">e</option>
+          <option value="5">f</option>
+          <option value="6">g</option>
+          <option value="7">h</option>
+          <option value="8">i</option>
+        </select>
+    </p>
+    <p>
+      <button type="button" id="btn1">$select.val(['2', '5'])</button>
+      <button type="button" id="btn2">setValue(select, null)</button>
+    </p>
+    <p>
+      <input type="submit">
+    </p>
+  </form>
+
+<script src="https://unpkg.com/jquery@1"></script>
+<script>
+
+init()
+document.getElementById('btn1').onclick = function () {
+  $('#letters').val(['2', '5'])
+}
+
+document.getElementById('btn2').onclick = function () {
+  setValue(document.getElementById('letters'), null)
+}
+
+function init() {
+  var select = document.getElementById('letters')
+  var pre = document.createElement('pre')
+  pre.id = 'pre'
+  select.form.appendChild(pre, select)
+  select.onchange = log
+  log(select)
+}
+
+function log (select) {
+  if (select == null) {
+    select = window.event.srcElement
+  } else if (select.nodeType !== 1) {
+    select = select.target
+  }
+
+  var selectedIndex = select.selectedIndex
+  var arr = [
+    'select.value: "' + select.value + '"',
+    'select.selectedIndex: ' + select.selectedIndex,
+    '$select.val(): ' + $(select).val(),
+    'getValue(select): ' + getValue(select)
+  ]
+
+  var form = select.form
+  if ('lastElementChild' in form) {
+    form.lastElementChild.innerHTML = arr.join('\n')
+  } else {
+    form.lastChild.innerText = arr.join('\n')
+  }
+}
+
+function getValue(select) {
+  var options = select.options
+  var ret = []
+  for (var i = 0; i < options.length; i++) {
+    var option = options[i]
+    if (option.selected) ret.push(option.value)
+  }
+  return ret.length ? ret : null
+}
+
+function setValue(select, value) {
+  var options = select.options
+  if (value == null) {
+    for (var i = 0; i < options.length; i++) {
+      var option = options[i]
+      if (option.selected) option.selected = false
+    }
+    return
+  }
+
+  for (var i = 0; i < options.length; i++) {
+    var option = options[i]
+    option.selected = value.indexOf(option.value) > -1
+  }
+}
+</script>
+</body>
+</html>

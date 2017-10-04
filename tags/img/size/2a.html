@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+<div style="display: none">
+  <img src="" alt="" id="img" />
+</div>
+<textarea name="" id="log" cols="100" rows="10"></textarea>
+<script>
+window.onload = function () {
+  var src = '200.jpg'
+  var img = new Image()
+  img.onload = function () {
+    log(this)
+    document.getElementById('img').src = src
+  }
+  img.src = src
+}
+
+function log (image) {
+  var arr = [
+    'image.width: ' + image.width,
+    'image.naturalWidth: ' + image.naturalWidth,
+    'image.height: ' + image.height,
+    'image.naturalHeight: ' + image.naturalHeight,
+    'image.src: ' + image.src
+  ]
+  document.getElementById('log').value = arr.join('\n')
+}
+</script>
+</body>
+</html>

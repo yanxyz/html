@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+</head>
+<body>
+	<iframe src="about:blank" frameborder="0" id="frame"></iframe>
+	<script>
+		var frameDoc = document.getElementById("frame").contentWindow.document
+
+		var newScript = document.createElement('script');
+		newScript.type = 'text/javascript';
+		newScript.src = 'jquery-2.0.3.min.js';
+		frameDoc.body.appendChild(newScript);
+
+	</script>
+</body>
+</html>

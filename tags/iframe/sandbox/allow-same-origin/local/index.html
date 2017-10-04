@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+  <iframe src="f.html" id="f"></iframe>
+<script>
+var win = window.frames[0]
+var doc = win.document
+console.log(win.location)
+console.log(doc.body.childElementCount)
+</script>
+</body>
+</html>

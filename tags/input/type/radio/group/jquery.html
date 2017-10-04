@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+  <h1>radio button group</h1>
+
+  <form action="server.php" method="post">
+    <p>
+      <input type="radio" name="gender" id="man" value="1" />
+      <label for="man">Man
+      <input type="radio" name="gender" id="woman" value="2" />
+      <label for="woman">Woman
+    </p>
+    <p id="log"></p>
+    <input type="submit" />
+  </form>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<script>
+$('input[name="gender"]').on('change', log)
+
+window.onload = log
+
+function log () {
+  // 间接做法，这里 jQuery 做了处理
+  // 如果有选中的，则返回选中的 value
+  // 如果没有，则返回第一个的 value
+  var value = $('input[name="gender"]').val()
+
+  // 直接做法，也是精准的做法
+  var value = $('input[name="gender"]:checked').val()
+
+  var arr = [
+    'checked.value: ' + value
+  ]
+
+  $('#log').html(arr.join('<br />'))
+}
+</script>
+
+</body>
+</html>

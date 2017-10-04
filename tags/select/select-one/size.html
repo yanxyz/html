@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+
+  <p>size: <input type="number" name="" id="size"></p>
+  <select name="" id="s" style="width: 5em">
+    <option value="0">a</option>
+    <option value="1">b</option>
+    <option value="2">c</option>
+    <option value="3">d</option>
+    <option value="4">e</option>
+    <option value="5">f</option>
+    <option value="6">g</option>
+    <option value="7">h</option>
+    <option value="8">i</option>
+  </select>
+
+<script>
+var s = document.getElementById('s')
+var size = document.getElementById('size')
+size.onchange = function () {
+  s.size = size.value
+}
+size.value = s.size
+</script>
+</body>
+</html>

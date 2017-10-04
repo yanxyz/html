@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+<h2>input:submit</h2>
+<form action="" name="form1">
+  <input type="text" />
+  <input type="submit" />
+</form>
+<script>
+document.forms.form1.onsubmit = function () {
+  alert('submit form1')
+  return false
+}
+</script>
+
+<h2>button:submit</h2>
+<form action="" name="form2">
+  <input type="text" />
+  <button type="submit">Submit</button>
+</form>
+<script>
+document.forms.form2.onsubmit = function () {
+  alert('submit form2')
+  return false
+}
+</script>
+
+<h2>input:image</h2>
+<form action="" name="form3">
+  <input type="text" />
+  <input type="image" src="submit.png" alt="Submit" />
+</form>
+<script>
+document.forms.form3.onsubmit = function () {
+  alert('submit form3')
+  return false
+}
+</script>
+
+<h2>no submit button</h2>
+<form action="" name="form4">
+  <input type="text" />
+</form>
+<script>
+document.forms.form4.onsubmit = function () {
+  alert('submit form4')
+  return false
+}
+</script>
+
+<h2>input:button</h2>
+<form action="" name="form5">
+  <input type="text" />
+  <input type="button" value="Submit" />
+</form>
+<script>
+document.forms.form5.onsubmit = function () {
+  alert('submit form5')
+  return false
+}
+</script>
+
+<h2>button:</h2>
+<form action="" name="form6">
+  <input type="text" />
+  <button>Submit</button>
+</form>
+<script>
+document.forms.form6.onsubmit = function () {
+  alert('submit form6')
+  return false
+}
+</script>
+
+<h2>button:button</h2>
+<form action="" name="form7">
+  <input type="text" />
+  <button type="button">Submit</button>
+</form>
+<script>
+document.forms.form7.onsubmit = function () {
+  alert('submit form7')
+  return false
+}
+</script>
+</body>
+</html>

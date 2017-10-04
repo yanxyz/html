@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+  <h3>no option</h3>
+  <form action="sever.php" method="post">
+    <select name="color" id=""></select>
+    <input type="submit">
+  </form>
+
+  <h3>no option, select value</h3>
+  <form action="sever.php" method="post">
+    <select name="color" id="" value="black"></select>
+    <input type="submit">
+  </form>
+
+  <h3>option no value, option text 首尾有空白</h3>
+  <form action="sever.php" method="post">
+    <select name="color" id="">
+      <option>   red     </option>
+      <option>   green   </option>
+      <option>   blue    </option>
+    </select>
+    <input type="submit">
+  </form>
+
+  <h3>option value, option value 首尾有空白</h3>
+  <form action="sever.php" method="post">
+    <select name="color" id="">
+      <option value="  r   ">    red     </option>
+      <option value="  g">    green   </option>
+      <option value="b">    blue    </option>
+    </select>
+    <input type="submit">
+  </form>
+
+<script>
+init()
+
+function init() {
+  var forms = document.forms
+  for (var i = 0; i < forms.length; i++) {
+    var form = forms[i]
+    var select = form.elements.color
+    var pre = document.createElement('pre')
+    form.appendChild(pre)
+    select.onchange = log
+    log(select)
+  }
+}
+
+function log (target) {
+  var select = target = target.nodeType === 1 ? target : target.target
+  var selectedIndex = select.selectedIndex
+  var arr = [
+    'select.value: "' + select.value + '"',
+    'select.selectedIndex: ' + selectedIndex
+  ]
+
+  // IE < 9, `.options[-1]` 抛出错误
+  if (selectedIndex > -1) {
+    var selectedOption = select.options[selectedIndex]
+    arr.push(
+      'selectedOption.value: "' + selectedOption.value + '"',
+      'selectedOption.text: "' + selectedOption.text + '"',
+      'selectedOption.textContent: "' + selectedOption.textContent + '"',
+      'selectedOption.innerText:   "' + selectedOption.innerText + '"'
+    )
+  }
+
+  // IE < 9 不支持 lastElementChild
+  if ('lastElementChild' in target.form) {
+    target.form.lastElementChild.textContent = arr.join('\n')
+  } else {
+    target.form.lastChild.innerText = arr.join('\n')
+  }
+}
+</script>
+</body>
+</html>

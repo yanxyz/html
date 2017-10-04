@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+  <iframe src="f.html" name="sub"></iframe>
+  <script>
+    setTimeout(function () {
+      console.log(window.frames[0].frames[0].frames[0])
+    }, 100)
+  </script>
+</body>
+</html>

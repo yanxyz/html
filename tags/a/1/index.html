@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="yanxyz.net" />
+		<title>a</title>
+		<style>
+			*{margin:0;padding:0}
+			body { margin:10px auto;width:600px;}
+			h2 {font-size:16px;margin:15px 0;}
+			
+			/*错误顺序*/
+			.a2-1:link {color:#336699;}
+			.a2-1:hover {color:#009933}
+			.a2-1:active {color:yellow}
+			.a2-1:visited {color:#000;}
+			
+			/*比较a与:link权重*/
+			/*a.a2 {color:#009933;margin-right:15px;}*/
+
+			/*正确顺序*/
+			/*.a2-2:link {color:#336699;}*/
+			/*.a2-2:visited {color:#5D5636;}*/
+			/*.a2-2:hover {color:#009933}*/
+			/*.a2-2:active {color:#DD4B39}*/
+
+		</style>
+	</head>
+	<body>
+		<h2>有href时是超链接，浏览器默认样式：</h2>
+		<a href="#a1">我是hyperlink</a>
+		<h2>没有href时是占位符，多用作锚点，浏览器默认样式：</h2>
+		<a id="a1">我不是hyperlink</a>
+		<h2>给超链接添加样式</h2>
+		<a class="a2 a2-1" href="#">错误顺序</a><a class="a2 a2-2" href="#">正确顺序</a>
+		<h2>给超链接添加样式</h2>
+	
+		<h2>src地址错误且没有尺寸</h2>
+		<img src="#" alt="我是yan" />
+		<h2>加上链接</h2>
+		<a href="#"><img src="#" alt="我是yan" /></a>
+		<h2>加上链接，去掉边框</h2>
+		<a href="#"><img src="#" alt="我是yan" style="border:0;" /></a>
+	</body>
+</html>

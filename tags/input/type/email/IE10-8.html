@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <style>
+  input[type="email"] {
+    border: 1px solid blue;
+  }
+  </style>
+</head>
+
+<body>
+  <input type="email" id="email" />
+  <p>
+    <button id="outerHTML">outerHTML</button>
+    <span id="resultOuterHTML" class="result"></span>
+  </p>
+  <p>
+    <button id="getAttribute">getAttribute("type")</button>
+    <span id="resultType" class="result"></span>
+  </p>
+  <script>
+  function get(id) {
+    return document.getElementById(id);
+  }
+
+  var email = get('email');
+
+  get("outerHTML").onclick = function() {
+    get("resultOuterHTML").innerHTML = email.outerHTML.replace(/</g, "&lt;");
+  };
+  get("getAttribute").onclick = function() {
+    get("resultType").innerHTML = email.getAttribute("type");
+  };
+  </script>
+
+  <p>IE10 下， 文档模式小于 10 时， 将不支持的 input:email 改为 input:text。
+  <a href="http://www.zhangxinxu.com/wordpress/?p=2844">IE10↘IE7-IE9 type=email的完全抛弃</a></p>
+</body>
+
+</html>

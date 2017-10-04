@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+<h2>submit()</h2>
+<form action="" name="form1">
+  <input type="text"/>
+  <input type="button" id="btn" value="Submit" />
+</form>
+<script>
+document.getElementById('btn').onclick = function () {
+  alert('submit()')
+  this.form.submit()
+}
+
+document.forms.form1.onsubmit = function () {
+  alert('submit form1')
+  return false
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+  <form action="sever.php" method="post">
+    <select name="color" id="color">
+      <option value="r">red</option>
+      <option value="g">green</option>
+      <option value="b">blue</option>
+    </select>
+    <p>
+      <button type="button" id="btn1">value="b"</button>
+      <button type="button" id="btn2">value="black"</button>
+      <button type="button" id="btn3">selectedIndex=1</button>
+      <button type="button" id="btn4">selected=true</button>
+    </p>
+    <p>
+      <input type="submit">
+    </p>
+  </form>
+
+<script>
+var select = $('color')
+select.onchange = function () {
+  alert(this.value)
+}
+
+$('btn1').onclick = function () {
+  select.value = 'b'
+}
+
+$('btn2').onclick = function () {
+  select.value = 'black'
+}
+
+$('btn3').onclick = function () {
+  select.selectedIndex = 1
+}
+
+$('btn4').onclick = function () {
+  select.options[2].selected = true
+}
+
+function $(id) {
+  return document.getElementById(id)
+}
+</script>
+</body>
+</html>

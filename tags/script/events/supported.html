@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+<pre id="result"></pre>
+<script>
+var s = document.createElement('script')
+var result = {
+  'load': s.onload === null,
+  'readystatechange': s.onreadystatechange === null,
+  'readyState': s.readyState || false
+}
+document.getElementById('result').innerHTML = window.JSON
+  ? JSON.stringify(result, null, 2) : result
+</script>
+</body>
+</html>

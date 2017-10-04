@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+
+<body>
+  <script>
+  var ifr = document.createElement('iframe');
+  ifr.src = 'http://www.baidu.com';
+  ifr.onload = function() {
+    alert('loaded');
+  };
+  document.body.appendChild(ifr);
+  </script>
+</body>
+
+</html>

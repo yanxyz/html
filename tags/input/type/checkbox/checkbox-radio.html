@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<style>
+		.form {padding:10px; background: #eee;}
+		.kv {margin-top:10px;}
+		label {display: block;}
+	</style>
+</head>
+<body>
+	<h1>单选框与复选框</h1>
+	<h3>单选框 type="radio" </h3>
+	<p>单选框组 radio button group，只能选择一个</p>
+	<div class="form">
+		<form action="form.php" method="post">
+			<label for="">性别：</label>
+			<input type="radio" name="gender" id="man" value="man" onchange="test(this);" />男
+			<input type="radio" name="gender" id="woman" value="woman" onchange="test(this);" />女
+			<input type="submit" value="提交" />
+		</form>
+	</div>
+	<p>name 相同，value 不同。<br />
+		选中 checked <br />
+		提交字段： name:选中值 <br />
+		js 遍历获取选中项
+	</p>
+	<script>
+		function test(el) {
+			var els = el.form.elements['gender'],
+			val = ''
+
+			for (var i=0, len=els.length; i<len; i++) {
+				if (els[i].checked) val = els[i].value;
+			}
+
+			console.log(val)
+		}
+	</script>
+
+
+	<h3>复选框 type="checkbox" </h3>
+	<p>复选框组，可以多选</p>
+	<div class="form">
+		<form action="form.php" method="post">
+			<label for="">颜色：</label>
+			<input type="checkbox" name="color[]" id="color_red" value="red" />红
+			<input type="checkbox" name="color[]" id="color_green" value="green" />绿
+			<input type="checkbox" name="color[]" id="color_blue" value="blue" />蓝
+			<br />
+			<input type="submit" value="提交" />
+		</form>
+	</div>
+	<p>name 相同，value 不同。<br />
+		选中 checked <br />
+		提交一个选中的数组 <br />
+		php 获取选中选项 http://stackoverflow.com/questions/4997252/get-post-from-multiple-checkboxes<br />
+		js 遍历获取选中项
+	</p>
+
+	<h3>value有无的区别</h3>
+	<p>没有value，如果选中则认为值为 on</p>
+	<div class="form">
+		<form action="form.php" method="post">
+			<input type="checkbox" name="agree" id="agree" checked />同意协议
+			<input type="submit" value="提交" />
+		</form>
+	</div>
+
+	<p>有value，不过是空值，得到值为空</p>
+	<div class="form">
+		<form action="form.php" method="post">
+			<input type="checkbox" name="agree" id="agree" value="" checked />同意协议
+			<input type="submit" value="提交" />
+		</form>
+	</div>
+</body>
+</html>

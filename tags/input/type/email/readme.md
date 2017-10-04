@@ -1,0 +1,6 @@
+# input:email
+
+## Attribute
+
+`multiple`
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      height: 90vh;
+      min-height: 300px;
+    }
+
+    textarea {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+
+<textarea id="input"></textarea>
+<textarea id="output"></textarea>
+
+<script>
+
+  function escapeHTML(input) {
+    return input
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+  }
+
+  document.getElementById('input').onchange = function () {
+    document.getElementById('output').value = escapeHTML(this.value.trim())
+  }
+
+</script>
+</body>
+</html>

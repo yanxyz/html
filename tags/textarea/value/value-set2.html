@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+
+  <form action="server.php" method="POST">
+    <p>
+      <textarea name="t1" id="t1" cols="50" rows="5"></textarea>
+    </p>
+    <p>
+      <button type="button" id="btn1">value="Ivan Yan"</button>
+    </p>
+  </form>
+
+<script>
+var ta = $('t1')
+ta.onchange = function () {
+  alert(ta.value)
+}
+
+ta.oninput = function () {
+  alert(ta.value)
+}
+
+$('btn1').onclick = function () {
+  ta.value = 'Ivan Yan'
+}
+
+function $(id) {
+  return document.getElementById(id)
+}
+</script>
+
+</body>
+</html>

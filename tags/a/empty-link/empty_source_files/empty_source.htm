@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8" />
+	<title>empty src</title>
+	<style>body{font-family:courier, 'courier new';}code{background:#f7f7f7;border:1px solid #ddd;padding:0 3px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;font-size:12px;color:#080;}p{font-size:12px;color:#999;}cite{font-size:14px;color:#c30;}</style>
+</head>
+<body>
+
+<h3>一、发送请求：</h3>
+<p>浏览器：<code>All</code>, 像 <code>chrome</code> 等部分浏览器，<code>hash(#)</code> 和空都只请求本路径</p>
+<ol>
+    <li><img src="" alt="empty image src"/></li>
+    <li><div style="background:url(#background)">背景图片使用 <code>background:url(#)</code> 也是发送请求的</div></li>
+    <li><img src="#image" alt="image src using hash(#)"></li>
+    <li><img src="http://www.apple.com/favicon.ico" /></li>
+</ol>
+
+<h3>二、部分发送请求：</h3>
+<p>浏览器（延时非常小）：<code>safari</code>, <code>chrome(多个 about:blank 会多次发送多次请求)</code></p>
+<cite>使用 <code>about:blank</code></cite>
+<ol>
+    <li><img src="about:blank" alt="empty image src"/></li>
+    <li><div style="background:url(about:blank)">hello world</div></li>
+    <li><code>&lt;iframe /&gt;</code><iframe src="javascript:''" frameborder="0" height="15"></iframe></li>
+</ol>
+
+<h3>二、不发送请求：</h3>
+<p>浏览器：<code>all</code>, <code>chrome(延时无效，相当于不发送请求)</code></p>
+<cite>使用 <code>javascript:''</code></cite>
+<ol>
+    <li><img src="javascript:''" alt="empty image src"/></li>
+    <li><code>&lt;script /&gt;</code> <script type="text/javascript" src="javascript:''"></script></li>
+    <li><code>&lt;iframe /&gt;</code><iframe src="javascript:''" frameborder="0" height="15"></iframe></li>
+</ol>
+
+</body>
+</html>

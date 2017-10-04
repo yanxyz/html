@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="yanxyz.net" />
+		<title>Img</title>
+		<style>
+			*{margin:0;padding:0}
+			body { margin:10px auto;width:600px;}
+			h2 {font-size:16px;margin:15px 0;}
+			span {font-size:14px;background:#f5f;}
+			em {font-size:50px;}
+		</style>
+	</head>
+	<body>
+		<h2>src为空</h2>
+		<img width="100" height="100" src="" alt="我是yan" />
+		<h2>src地址错误</h2>
+		<img width="100" height="100" src="#" alt="我是yan" />
+		<h2>src为空且没有尺寸</h2>
+		<img src="" alt="我是yan" />
+		<h2>src地址错误且没有尺寸</h2>
+		<img src="#" alt="我是yan" />
+		<h2>加上链接</h2>
+		<a href="#"><img src="#" alt="我是yan" /></a>
+		<h2>加上链接，去掉边框</h2>
+		<a href="#"><img src="#" alt="我是yan" style="border:0;" /></a>
+	</body>
+</html>

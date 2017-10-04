@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+  <h1>radio button</h1>
+
+  <h2>no value attribute</h2>
+  <form action="server.php" method="post">
+    <label><input type="radio" name="novalue" id="novalue" />radio</label>
+    <p></p>
+    <input type="submit" />
+  </form>
+
+  <h2>value=""</h2>
+  <form action="server.php" method="post">
+    <label><input type="radio" name="empty" id="empty" value />radio</label>
+    <p></p>
+    <input type="submit" />
+  </form>
+
+  <h2>value="not empty"</h2>
+  <form action="server.php" method="post">
+    <label><input type="radio" name="notempty" id="notempty" value="not empty" />radio</label>
+    <p></p>
+    <input type="submit" />
+  </form>
+
+<script>
+$('novalue').onchange = log
+$('empty').onchange = log
+$('notempty').onchange = log
+
+window.onload = function () {
+  log($('novalue'))
+  log($('empty'))
+  log($('notempty'))
+}
+
+function log (el) {
+  el = el.nodeType === 1 ? el : this
+  var arr = [
+    'this.value: ' + el.value,
+    'this.checked: ' + el.checked,
+    'this.defaultChecked: ' + el.defaultChecked
+  ]
+  el.parentNode.nextElementSibling.innerHTML = arr.join('<br />')
+}
+
+function $ (id) {
+  return document.getElementById(id)
+}
+</script>
+
+</body>
+</html>

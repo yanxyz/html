@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+</head>
+<body>
+	<input type="radio" name="" id="radio" />
+	<input type="checkbox" name="" id="checkbox" />
+	<script>
+		var r = document.getElementById('radio')
+		var c = document.getElementById('checkbox')
+
+		function test() {
+			console.log(this.checked)
+		}
+
+		r.onchange = test
+		c.onchange = test
+		// 单个单选按钮选中之后不能再改变状态， 所以不能单用。
+
+		// 可以改变选中状态， 但是不能触发事件
+		setTimeout(function() {
+			r.checked = true
+			c.checked = true
+		}, 1000)
+
+		// 模拟事件
+		setTimeout(function() {
+			r.click()
+			c.click()
+		}, 2000)
+	</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>input</title>
+  <style>
+    table {border-collapse: collapse;}
+    tr { height: 30px; border-bottom: 1px solid #cdcdcd;}
+    tr:nth-child(even) {background: #efefef;}
+    th, td {padding:5px 10px; border: 1px solid #cdcdcd;}
+    .html5 {color: green;}
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <h1>input</h1>
+  <p>author: Ivan Yan</p>
+  <p>
+    <input type="checkbox" id="check-html5"> only show html5 type
+  </p>
+  <form action="" id="form">
+    $table$
+  </form>
+
+<script>
+var rows = document.getElementById('table').tBodies[0].rows
+document.getElementById('check-html5').addEventListener('change', function (e) {
+  Array.prototype.forEach.call(rows, function (row) {
+    if (!row.classList.contains('html5')) {
+      row.classList.toggle('hidden')
+    }
+  })
+})
+</script>
+
+</body>
+</html>

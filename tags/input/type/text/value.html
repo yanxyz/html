@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+
+  <h3>no value</h3>
+  <form action="server.php" method="post">
+    <input type="text" name="username">
+  </form>
+
+  <h3>value=""</h3>
+  <form action="server.php" method="post">
+    <input type="text" name="username" value="">
+  </form>
+
+  <h3>value="Ivan Yan"</h3>
+  <form action="server.php" method="post">
+    <input type="text" name="username" value="Ivan Yan">
+  </form>
+
+  <h3>value="     Ivan Yan  "</h3>
+  <form action="server.php" method="post">
+    <input type="text" name="username" value="     Ivan Yan  ">
+  </form>
+
+<script>
+var forms = document.forms
+for (var i = 0; i < forms.length; i++) {
+  var form = forms[i]
+  var input = form.firstElementChild
+  var pre = document.createElement('pre')
+  pre.innerText = 'input.value: "' + input.value + '"'
+  form.appendChild(pre)
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+
+<body>
+  <div>
+    <h2>no value</h2>
+    <p>Default value is "on".</p>
+    <form action="/server.php" method="post">
+      <input type="checkbox" name="color" id="" />checkbox
+      <input type="submit" />
+    </form>
+  </div>
+
+  <div>
+    <h2>value=""</h2>
+    <p>value of the checked checkbox is no doubt "".</p>
+    <form action="/server.php" method="post">
+      <input type="checkbox" name="color" id="" value="" />checkbox
+      <input type="submit" />
+    </form>
+  </div>
+
+  <div>
+    <h2>multiple checkboxes</h2>
+    <p>php problem: it gets only one checked when multiple checkboxes are checked.</p>
+    <form action="/server.php" method="post">
+      <input type="checkbox" name="color" id="" value="r" />red
+      <input type="checkbox" name="color" id="" value="g" />green
+      <input type="checkbox" name="color" id="" value="b" />blue
+      <input type="submit" />
+    </form>
+  </div>
+
+  <div>
+    <h2>multiple checkboxes</h2>
+    <p>use name="color[]" to solve php problem</p>
+    <form action="/server.php" method="post">
+      <input type="checkbox" name="color[]" id="" value="r" />red
+      <input type="checkbox" name="color[]" id="" value="g" />green
+      <input type="checkbox" name="color[]" id="" value="b" />blue
+      <input type="submit" />
+    </form>
+  </div>
+</body>
+
+</html>

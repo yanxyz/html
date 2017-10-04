@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+  <h1>radio button group</h1>
+
+  <form action="server.php" method="post">
+    <p>
+      <input type="radio" name="gender" id="man" value="1" />
+      <label for="man">Man
+      <input type="radio" name="gender" id="woman" value="2" />
+      <label for="woman">Woman
+    </p>
+    <p id="log"></p>
+    <input type="submit" />
+  </form>
+
+<script>
+$('man').onchange = log
+$('woman').onchange = log
+
+window.onload = log
+
+function log () {
+  var els = toArray(document.getElementsByName('gender'))
+  var value
+  for (var i = 0; i < els.length; i++) {
+    var item = els[i]
+    if (item.checked) {
+      value = item.value
+      break
+    }
+  }
+
+  // IE > 8
+  // var checkedInput = document.querySelector('input[name="gender"]:checked')
+  // var value = checkedInput ? checkedInput.value || undefined
+
+  var arr = [
+    'checked.value: ' + value
+  ]
+
+  document.getElementById('log').innerHTML = arr.join('<br />')
+}
+
+function $ (id) {
+  return document.getElementById(id)
+}
+
+// IE < 9 只能这样做
+function toArray (elements) {
+  var len = elements.length
+  if (!len) return elements
+
+  var arr = []
+  for (var i = 0; i < len; i++) {
+    arr.push(elements[i])
+  }
+  return arr
+}
+</script>
+
+</body>
+</html>

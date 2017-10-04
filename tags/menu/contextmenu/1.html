@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+</head>
+<body>
+  <form name="npc">
+ <label>Character name: <input name=char type=text contextmenu=namemenu required></label>
+ <menu type=popup id=namemenu>
+  <menuitem label="Pick random name" onclick="document.forms.npc.elements.char.value = getRandomName()">
+  <menuitem label="Prefill other fields based on name" onclick="prefillFields(document.forms.npc.elements.char.value)">
+ </menu>
+</form>
+</body>
+</html>
