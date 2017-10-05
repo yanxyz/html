@@ -8,14 +8,13 @@
 - [button](../button/index.md)
 - [label](../label/index.md)
 
+## form data
 
-## Attributes
 
-## name
 
-表单数据
+## form elements
 
-控件有 name 的组
+
 
 
 ## Events

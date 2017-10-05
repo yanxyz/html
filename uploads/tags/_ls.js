@@ -6,7 +6,7 @@ const path = require('path')
 const list = []
 const tagsDir = path.join(__dirname, '../../tags/')
 fs.readdirSync(tagsDir).forEach(file => {
-  const fullname = path.join(tagsDir, file, 'index.md')
+  const fullname = path.join(tagsDir, file, 'readme.md')
   if (fs.existsSync(fullname)) {
     // fs.writeFileSync(fullname, fs.readFileSync(fullname, 'utf8').replace(/^---[^#]+#/, '#'))
     list.push(file)

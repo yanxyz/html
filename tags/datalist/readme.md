@@ -1,9 +1,14 @@
 # \<datalist>
 
+```
+input[list] -> datalist[id]
+```
 
-# input list attribute
+[示例](1.html)
 
-- http://caniuse.com/#feat=datalist
+## 兼容性
+
+- <http://caniuse.com/#feat=datalist>
 
 ### 显示列表
 
@@ -14,7 +19,3 @@ Firefox, 在输入框内双击打开。只显示 option text。
 Edge，同 Firefox。
 
 IE10-11 支持 datalist, 在输入框内单击。只显示 option text。
-
-### 列表过长
-
-

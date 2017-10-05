@@ -1,3 +1,8 @@
 github: [metadata]
 title: 'html'
+description: ''
 baseurl: '/html' # 与 github.io 一致
+
+exclude:
+  - '*.sublime-*'
+  - Gemfile*

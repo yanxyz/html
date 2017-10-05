@@ -7,7 +7,7 @@
   {% if site.github.owner_name %}
   <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
   {% else %}
-  <link rel="stylesheet" href="https://hongfanqie.github.io/default/assets/css/style.css">
+  <link rel="stylesheet" href="{{ '/assets/css/primer.style.css' | relative_url }}">
   {% endif %}
   <link rel="stylesheet" href="{{ '/assets/css/custom.css?v=' | append: site.github.build_revision | relative_url }}">
   <script>
